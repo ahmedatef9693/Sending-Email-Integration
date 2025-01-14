@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-14 20:53:13.889073",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "subject",
+  "status",
+  "to",
+  "column_break_vbmg",
+  "from",
+  "relpy_to",
+  "send_id",
+  "from_body_source_section",
+  "email_body_source",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Sent",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Sent\nDelivered\nDelivery Delayed\nComplained\nBounced",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Send Email Record",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Data",
+   "label": "From",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "relpy_to",
+   "fieldtype": "Data",
+   "label": "Relpy To"
+  },
+  {
+   "fieldname": "email_body_source",
+   "fieldtype": "Code",
+   "label": "Email Body Source",
+   "options": "HTML"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_vbmg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_body_source_section",
+   "fieldtype": "Section Break",
+   "label": "From Body Source"
+  },
+  {
+   "description": "List Of Emails Separated With Comma",
+   "fieldname": "to",
+   "fieldtype": "Small Text",
+   "label": "To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "send_id",
+   "fieldtype": "Data",
+   "label": "Send Id",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-14 22:01:08.207160",
+ "modified_by": "Administrator",
+ "module": "Send Email Integration",
+ "name": "Send Email Record",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "subject",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
