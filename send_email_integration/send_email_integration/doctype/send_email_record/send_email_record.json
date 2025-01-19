@@ -7,25 +7,24 @@
  "field_order": [
   "subject",
   "status",
-  "to",
+  "to_emails",
   "column_break_vbmg",
-  "from",
+  "from_email",
   "relpy_to",
-  "send_id",
+  "sending_id",
   "from_body_source_section",
-  "email_body_source",
+  "email_html",
   "amended_from"
  ],
  "fields": [
   {
-   "default": "Sent",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Sent\nDelivered\nDelivery Delayed\nComplained\nBounced",
-   "read_only": 1,
-   "reqd": 1
+   "no_copy": 1,
+   "options": "\nSent\nDelivered\nDelivery Delayed\nComplained\nBounced\nOpened",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -38,22 +37,9 @@
    "search_index": 1
   },
   {
-   "fieldname": "from",
-   "fieldtype": "Data",
-   "label": "From",
-   "options": "Email",
-   "reqd": 1
-  },
-  {
    "fieldname": "relpy_to",
    "fieldtype": "Data",
    "label": "Relpy To"
-  },
-  {
-   "fieldname": "email_body_source",
-   "fieldtype": "Code",
-   "label": "Email Body Source",
-   "options": "HTML"
   },
   {
    "fieldname": "subject",
@@ -71,23 +57,37 @@
    "label": "From Body Source"
   },
   {
+   "fieldname": "from_email",
+   "fieldtype": "Data",
+   "label": "From",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
    "description": "List Of Emails Separated With Comma",
-   "fieldname": "to",
+   "fieldname": "to_emails",
    "fieldtype": "Small Text",
    "label": "To",
    "reqd": 1
   },
   {
-   "fieldname": "send_id",
+   "fieldname": "email_html",
+   "fieldtype": "HTML Editor",
+   "label": "Email HTML"
+  },
+  {
+   "fieldname": "sending_id",
    "fieldtype": "Data",
-   "label": "Send Id",
-   "read_only": 1
+   "label": "Sending Id",
+   "no_copy": 1,
+   "read_only": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-14 22:01:08.207160",
+ "modified": "2025-01-19 03:02:20.152448",
  "modified_by": "Administrator",
  "module": "Send Email Integration",
  "name": "Send Email Record",
