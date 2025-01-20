@@ -18,9 +18,12 @@
  ],
  "fields": [
   {
+   "allow_on_submit": 1,
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_filter": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "no_copy": 1,
    "options": "\nSent\nDelivered\nDelivery Delayed\nComplained\nBounced\nOpened",
@@ -76,6 +79,7 @@
    "label": "Email HTML"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "sending_id",
    "fieldtype": "Data",
    "label": "Sending Id",
@@ -87,7 +91,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-19 03:02:20.152448",
+ "modified": "2025-01-20 20:02:40.639627",
  "modified_by": "Administrator",
  "module": "Send Email Integration",
  "name": "Send Email Record",
