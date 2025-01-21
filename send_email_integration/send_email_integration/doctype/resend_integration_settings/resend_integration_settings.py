@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class SendingSettings(Document):
+class ResendIntegrationSettings(Document):
 	pass

@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestSendingSettings(FrappeTestCase):
+class TestResendIntegrationSettings(FrappeTestCase):
 	pass

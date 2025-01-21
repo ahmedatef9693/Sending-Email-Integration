@@ -1,7 +1,7 @@
 
 import frappe
 from send_email_integration.utils.constants import EMAIL_STATUS_UPDATE_EVENTS
-
+from svix.webhooks import Webhook , WebhookVerificationError
 
 
 @frappe.whitelist(allow_guest = True)

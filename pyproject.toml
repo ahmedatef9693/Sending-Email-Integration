@@ -9,6 +9,7 @@ readme = "README.md"
 dynamic = ["version"]
 dependencies = [
     "resend==2.5.1",
+    "svix==1.56.0"
     # "frappe~=15.0.0" # Installed and managed by bench.
 ]
 
@@ -19,4 +20,5 @@ build-backend = "flit_core.buildapi"
 # These dependencies are only installed when developer mode is enabled
 [tool.bench.dev-dependencies]
 resend = "2.5.1"
+svix= "1.56.0"
 # package_name = "~=1.1.0"
