@@ -3,7 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
-from send_email_integration.utils.helper_functions import get_sending_api_key
+from send_email_integration.utils.helper_functions import get_sending_api_key_and_signning_secret
 import resend
 
 
@@ -14,7 +14,8 @@ class SendEmailRecord(Document):
 		self.send_email_to_all_users()
 
 	def send_email_to_all_users(self):
-		resend.api_key = get_sending_api_key()
+		api_key = get_sending_api_key_and_signning_secret().get('api_key')
+		resend.api_key = api_key if api_key else frappe.throw("Please Check Api Key!")
 		email = resend.Emails.send({
 			"from":self.from_email,
 			"to":self.to_emails.strip().split(","),
@@ -25,5 +26,6 @@ class SendEmailRecord(Document):
 			'status':'Sent',
 			'sending_id':email["id"]
 		})
+		self.reload()
 
 

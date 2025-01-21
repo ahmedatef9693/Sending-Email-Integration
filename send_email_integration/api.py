@@ -1,11 +1,13 @@
 
 import frappe
 from send_email_integration.utils.constants import EMAIL_STATUS_UPDATE_EVENTS
+from send_email_integration.utils.helper_functions import get_sending_api_key_and_signning_secret
 from svix.webhooks import Webhook , WebhookVerificationError
 
 
 @frappe.whitelist(allow_guest = True)
 def handle_resend_webhook():
+    verify_signning_secret()
     data = frappe.form_dict
     entity , event = data.type.split('.')
     if entity == "email" and event in EMAIL_STATUS_UPDATE_EVENTS:
@@ -28,3 +30,14 @@ def send_email(subject="",from_email="",to_emails=[],email_html="",reply_to=""):
         resend_email_doc.save()
         resend_email_doc.submit()
     return True
+
+
+def verify_signning_secret():
+    payload = frappe.local.request.data
+    headers = frappe.local.request.headers
+    secret = get_sending_api_key_and_signning_secret().get('signning_secret')
+    try:
+        wh = Webhook(secret)
+        wh.verify(payload,headers)
+    except WebhookVerificationError as e:
+        frappe.throw("Webhook Verficiation Error Failed")
