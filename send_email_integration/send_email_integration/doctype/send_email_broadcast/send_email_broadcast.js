@@ -3,10 +3,12 @@
 
 frappe.ui.form.on("Send Email Broadcast", {
   refresh(frm) {
-    frm.add_custom_button(__("Send Emails"), function () {
-      frm.call("send_emails").then(() => {
-        frm.reload_doc();
+    if (frm.doc.status !== "Sent" && !frm.doc.__is_local) {
+      frm.add_custom_button(__("Send Emails"), function () {
+        frm.call("send_emails").then(() => {
+          frm.reload_doc();
+        });
       });
-    });
+    }
   },
 });
