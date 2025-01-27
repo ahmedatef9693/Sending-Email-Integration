@@ -1,0 +1,51 @@
+{
+ "charts": [
+  {
+   "chart_name": "Email Count Per Day",
+   "label": "Emails Sent"
+  }
+ ],
+ "content": "[{\"id\":\"BaSTqyvGbj\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Resend Integration</span>\",\"col\":12}},{\"id\":\"ezebVsBqMk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Email Records\",\"col\":3}},{\"id\":\"T1gx9ulrF7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New BroadCast Email\",\"col\":3}},{\"id\":\"UQU4-wlpHE\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Emails Sent\",\"col\":12}}]",
+ "creation": "2025-01-27 22:32:49.504016",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "message-1",
+ "idx": 0,
+ "indicator_color": "orange",
+ "is_hidden": 0,
+ "label": "Resend Integration",
+ "links": [],
+ "modified": "2025-01-27 22:43:53.946793",
+ "modified_by": "Administrator",
+ "module": "Send Email Integration",
+ "name": "Resend Integration",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 28.0,
+ "shortcuts": [
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "Email Records",
+   "link_to": "Send Email Record",
+   "stats_filter": "[[\"Send Email Record\",\"status\",\"is\",\"set\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "New BroadCast Email",
+   "link_to": "Send Email Broadcast",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Resend Integration"
+}
