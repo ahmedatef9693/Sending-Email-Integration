@@ -17,18 +17,20 @@ def handle_resend_webhook():
     return email_status
 
 @frappe.whitelist()
-def send_email(subject="",from_email="",to_emails=[],email_html="",reply_to=""):
+def send_email(subject="",from_email="",to_emails=[],email_html="",reply_to="",broadcast=None):
     if isinstance(to_emails,str):
         to_emails = to_emails.strip().split(",")
-    for to_email in to_emails:
+    for index ,to_email in enumerate(to_emails):
         resend_email_doc = frappe.new_doc("Send Email Record")
         resend_email_doc.from_email = from_email
         resend_email_doc.to_emails = to_email
         resend_email_doc.subject = subject
         resend_email_doc.email_html = email_html
         resend_email_doc.reply_to = reply_to
+        resend_email_doc.broadcast = broadcast
         resend_email_doc.save()
         resend_email_doc.submit()
+        frappe.publish_progress(round(((index + 1)/len(to_emails)*100)),title="Sending Emails...",description = f"""{index+1} of {len(to_emails)} Sent Successfully""")
     return True
 
 

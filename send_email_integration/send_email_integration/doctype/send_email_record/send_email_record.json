@@ -12,6 +12,7 @@
   "from_email",
   "relpy_to",
   "sending_id",
+  "broadcast",
   "from_body_source_section",
   "email_html",
   "amended_from"
@@ -62,7 +63,7 @@
   {
    "fieldname": "from_email",
    "fieldtype": "Data",
-   "label": "From",
+   "label": "From Email",
    "options": "Email",
    "reqd": 1
   },
@@ -86,12 +87,18 @@
    "no_copy": 1,
    "read_only": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "broadcast",
+   "fieldtype": "Link",
+   "label": "Broadcast",
+   "options": "Send Email Broadcast"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-27 19:50:10.546924",
+ "modified": "2025-01-27 21:10:05.978872",
  "modified_by": "Administrator",
  "module": "Send Email Integration",
  "name": "Send Email Record",
