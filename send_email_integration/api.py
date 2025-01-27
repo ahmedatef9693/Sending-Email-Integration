@@ -17,7 +17,7 @@ def handle_resend_webhook():
     return email_status
 
 @frappe.whitelist()
-def send_email(subject="",from_email="",to_emails=[],email_html="",reply_to="",broadcast=None):
+def send_emails(subject="",from_email="",to_emails=[],email_html="",reply_to="",broadcast=None):
     if isinstance(to_emails,str):
         to_emails = to_emails.strip().split(",")
     for index ,to_email in enumerate(to_emails):
